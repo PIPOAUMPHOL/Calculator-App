@@ -1,8 +1,9 @@
-# React + Vite
+<h1>Welcome to My Project 👋</h1>
+This project is currently under development. Other parts of the website are still in progress.<!--and only the search feature is available. Other parts of the website are still in progress. -->
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h1>Features</h1>
+<ul>
+  <li>Other features: 🚧 (Under Development)</li>
+</ul>
+<!-- <h2></h2> -->
+<!-- <p><a href="https://react-e-commerce-app-website.netlify.app/" target="_blank">Click to explore a preview of this project.</a></p> -->
