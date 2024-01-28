@@ -2,7 +2,6 @@
 import { css } from "@emotion/react";
 import CalculatorSection1 from "./CalculatorSection1";
 import CalculatorSection2 from "./CalculatorSection2";
-import CalculatorSection3 from "./CalculatorSection3";
 
 function MainComponents() {
   return (
@@ -27,8 +26,8 @@ function MainComponents() {
         `}
       >
         <CalculatorSection1 />
+
         <CalculatorSection2 />
-        <CalculatorSection3 />
       </div>
     </div>
   );
