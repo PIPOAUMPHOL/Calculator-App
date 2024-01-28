@@ -1,6 +1,6 @@
 <h1>Welcome to My Project 👋</h1>
 
-Features Calculate
+Features
 <ul>
   <li>addition</li>
   <li>subtraction</li>
