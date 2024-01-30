@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function CalculatorSection2(props) {
   const [displayValue, setDisplayValue] = useState("");
+  const [operator, setOperator] = useState("");
   const [plus, setPlus] = useState();
   const [minus, setMinus] = useState();
   const [multiply, setMultiply] = useState();
@@ -16,10 +17,26 @@ function CalculatorSection2(props) {
 
   function handleResetClick() {
     setDisplayValue("");
+    setOperator("");
     setPlus(undefined);
     setMinus(undefined);
     setMultiply(undefined);
     setDivide(undefined);
+  }
+
+  function handleOperator(op) {
+    const currentValue = Number(displayValue);
+    setOperator(op);
+    if (op === "+") {
+      setPlus(currentValue);
+    } else if (op === "-") {
+      setMinus(currentValue);
+    } else if (op === "x") {
+      setMultiply(currentValue);
+    } else if (op === "/") {
+      setDivide(currentValue);
+    }
+    setDisplayValue("");
   }
 
   function handleDelClick() {
@@ -29,45 +46,17 @@ function CalculatorSection2(props) {
     }
   }
 
-  function handlePlusClick() {
-    const currentValue = Number(displayValue);
-    setPlus(currentValue);
-    setDisplayValue("");
-  }
-
-  function handleMinusClick() {
-    const currentValue = Number(displayValue);
-    setMinus(currentValue);
-    setDisplayValue("");
-  }
-
-  function handleMultiplyClick() {
-    const currentValue = Number(displayValue);
-    setMultiply(currentValue);
-    setDisplayValue("");
-  }
-
-  function handleDivideClick() {
-    const currentValue = Number(displayValue);
-    setDivide(currentValue);
-    setDisplayValue("");
-  }
-
   function handleEqualClick() {
     let result;
     const currentValue = Number(displayValue);
-    if (plus !== undefined) {
+    if (operator === "+") {
       result = plus + currentValue;
-      setPlus(result);
-    } else if (minus !== undefined) {
+    } else if (operator === "-") {
       result = minus - currentValue;
-      setMinus(result);
-    } else if (multiply !== undefined) {
+    } else if (operator === "x") {
       result = multiply * currentValue;
-      setMultiply(result);
-    } else if (divide !== undefined) {
+    } else if (operator === "/") {
       result = divide / currentValue;
-      setDivide(result);
     }
     setDisplayValue(result.toString());
   }
@@ -343,7 +332,7 @@ function CalculatorSection2(props) {
               }
             `}
             onClick={() => {
-              handlePlusClick();
+              handleOperator("+");
             }}
           >
             <p
@@ -465,7 +454,7 @@ function CalculatorSection2(props) {
               }
             `}
             onClick={() => {
-              handleMinusClick();
+              handleOperator("-");
             }}
           >
             <p
@@ -559,7 +548,7 @@ function CalculatorSection2(props) {
               }
             `}
             onClick={() => {
-              handleDivideClick();
+              handleOperator("/");
             }}
           >
             <p
@@ -587,7 +576,7 @@ function CalculatorSection2(props) {
               }
             `}
             onClick={() => {
-              handleMultiplyClick();
+              handleOperator("x");
             }}
           >
             <p
